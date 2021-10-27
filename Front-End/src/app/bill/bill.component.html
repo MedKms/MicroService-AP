@@ -1,0 +1,23 @@
+<div class="container" *ngIf="bills">
+  <div class="row">Id Facture:{{bills.id}}</div>
+  <div class="row">Date:{{bills.billingDate}}</div>
+  <div class="row">Customer name:{{bills.customer.name}}</div>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id Product</th>
+    <th scope="col">Product name</th>
+    <th scope="col">Price</th>
+    <th scope="col">Quantity</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="bills">
+  <tr *ngFor="let pi of bills.productItems">
+    <th scope="row">{{pi.id}}</th>
+    <td>{{pi.product.name}}</td>
+    <td>{{pi.product.price}}</td>
+    <td>{{pi.quantity}}</td>
+  </tr>
+  </tbody>
+</table>

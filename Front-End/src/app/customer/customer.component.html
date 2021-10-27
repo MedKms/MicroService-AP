@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">name</th>
+    <th scope="col">email</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="customers">
+  <tr *ngFor="let c of customers._embedded.customers">
+    <th scope="row">{{c.id}}</th>
+    <td>{{c.name}}</td>
+    <td>{{c.email}}</td>
+  </tr>
+  </tbody>
+</table>

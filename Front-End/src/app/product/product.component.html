@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">name</th>
+    <th scope="col">price</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="products">
+  <tr *ngFor="let p of products._embedded.products">
+    <th scope="row">{{p.id}}</th>
+    <td>{{p.name}}</td>
+    <td>{{p.price}}</td>
+  </tr>
+  </tbody>
+</table>
