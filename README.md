@@ -118,7 +118,7 @@ dependencies:
 - Spring Boot DevTools
 - Eureka Discovery Client
 - Spring Boot Actuator
-####class Product
+#### class Product
 ```java
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor @ToString
@@ -162,4 +162,4 @@ public class InventoryServiceApplication {
 ![alt text](https://user-images.githubusercontent.com/56096031/139275689-8ee9910d-86ee-45e3-9769-2c6e2005e737.PNG)
 ![alt text](https://user-images.githubusercontent.com/56096031/139275721-6f0c0b26-e465-4557-980f-c0a38f9ad54b.PNG)
 
-###Billing Service
+### Billing Service
