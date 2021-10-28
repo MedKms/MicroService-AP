@@ -179,6 +179,7 @@ We used thos dependencies:
  - Application.yml
     We can configure routes by create a application.yml file in resources Folder:
 ![alt text](https://user-images.githubusercontent.com/56096031/139330419-5b076202-5125-4976-9f7d-90059fa92633.PNG)
-   Or use a  Java Config Class
+
+ Or use a  Java Config Class
 ![alt text](https://user-images.githubusercontent.com/56096031/139334103-54b899e9-1bcd-45bc-9135-7b3591a68f23.PNG)
 
