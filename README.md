@@ -107,6 +107,8 @@ Actuator
 ![alt text](https://user-images.githubusercontent.com/56096031/139273799-da28d8cc-7adb-44e2-a1cd-211e7b5fa518.PNG)
 actuator/health
 ![alt text](https://user-images.githubusercontent.com/56096031/139273869-ac367121-7fd9-4ebf-9da5-fd85eb320b9d.PNG)
+Application.proprties
+![alt text](https://user-images.githubusercontent.com/56096031/139323900-54feec5b-2de1-4053-b8ed-dbd3e6fe3548.PNG)
 ### Inventory Service
 we have created a spring project Inventory-service.
 dependencies:
@@ -161,5 +163,22 @@ public class InventoryServiceApplication {
 ![alt text](https://user-images.githubusercontent.com/56096031/139275566-9b0e1eed-2293-4a1b-8266-0580114ed5c4.PNG)
 ![alt text](https://user-images.githubusercontent.com/56096031/139275689-8ee9910d-86ee-45e3-9769-2c6e2005e737.PNG)
 ![alt text](https://user-images.githubusercontent.com/56096031/139275721-6f0c0b26-e465-4557-980f-c0a38f9ad54b.PNG)
+Application.proprties
+![alt text](https://user-images.githubusercontent.com/56096031/139323906-c056554e-aba7-4264-a61d-00695f452bac.PNG)
+### Gateway-Service
+Spring Cloud Gateway provides a library to build an API Gateway.
+This is the preferred gateway implementation provided by Spring Cloud.
+It's built with Spring 5, Spring Boot 2, and Project Reactor.
+We used thos dependencies:
+- Gateway
+- Spring Boot Actuator
+- Eureka Discovery Client 
 
-### Billing Service
+#### There are two ways to configure the gattway routes 
+1- Static 
+ - Application.yml
+    We can configure routes by create a application.yml file in resources Folder:
+![alt text](https://user-images.githubusercontent.com/56096031/139330419-5b076202-5125-4976-9f7d-90059fa92633.PNG)
+   Or use a  Java Config Class
+![alt text](https://user-images.githubusercontent.com/56096031/139334103-54b899e9-1bcd-45bc-9135-7b3591a68f23.PNG)
+
