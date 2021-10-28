@@ -99,4 +99,67 @@ public class CustomerServiceApplication {
   }
 }
 ```
+All customers
+![alt text](https://user-images.githubusercontent.com/56096031/139273464-08c5b2e6-3290-4133-8b40-5b1b35bd1320.PNG)
+Customer
+![alt text](https://user-images.githubusercontent.com/56096031/139273680-833d132a-d648-40cd-9a37-9c72f8af5bc0.PNG)
+Actuator
+![alt text](https://user-images.githubusercontent.com/56096031/139273799-da28d8cc-7adb-44e2-a1cd-211e7b5fa518.PNG)
+actuator/health
+![alt text](https://user-images.githubusercontent.com/56096031/139273869-ac367121-7fd9-4ebf-9da5-fd85eb320b9d.PNG)
+### Inventory Service
+we have created a spring project Inventory-service.
+dependencies:
+- Spring Web
+- Spring Data JPA
+- H2 Database
+- Rest Repositories
+- Lombok
+- Spring Boot DevTools
+- Eureka Discovery Client
+- Spring Boot Actuator
+####class Product
+```java
+@Entity
+@Data @NoArgsConstructor @AllArgsConstructor @ToString
+public class Product {
+@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+private String name;
+private double price;
+}
+```
+#### interface ProductRepository
+```java
+@RepositoryRestResource
+@CrossOrigin("http://localhost:4200")
+public interface ProductRepository extends JpaRepository<Product,Long> {
+}
+```
+#### class InventoryServiceApplication
+```java
+@SpringBootApplication
+public class InventoryServiceApplication {
 
+  public static void main(String[] args) {
+    SpringApplication.run(InventoryServiceApplication.class, args);
+  }
+
+  @Bean
+  CommandLineRunner start(ProductRepository productRepository, RepositoryRestConfiguration restConfiguration) {
+    restConfiguration.exposeIdsFor(Product.class);
+    return args -> {
+      productRepository.save(new Product(null, "Computer Desk Top HP", 900));
+      productRepository.save(new Product(null, "Printer Epson", 80));
+      productRepository.save(new Product(null, "MacBook Pro Lap Top", 1800));
+      productRepository.findAll().forEach(System.out::println);
+    };
+  }
+}
+```
+![alt text](https://user-images.githubusercontent.com/56096031/139275320-d73fbe0b-6167-4109-8705-34e1cd4db165.PNG)
+![alt text](https://user-images.githubusercontent.com/56096031/139275566-9b0e1eed-2293-4a1b-8266-0580114ed5c4.PNG)
+![alt text](https://user-images.githubusercontent.com/56096031/139275689-8ee9910d-86ee-45e3-9769-2c6e2005e737.PNG)
+![alt text](https://user-images.githubusercontent.com/56096031/139275721-6f0c0b26-e465-4557-980f-c0a38f9ad54b.PNG)
+
+###Billing Service
